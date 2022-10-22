@@ -28,7 +28,8 @@ CREATE TABLE `empleado` (
   `empleado_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) DEFAULT NULL,
   `dni` int DEFAULT NULL,
-  PRIMARY KEY (`empleado_id`)
+  PRIMARY KEY (`empleado_id`),
+  KEY `indice_nombre_empleado` (`nombre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-12 20:46:14
+-- Dump completed on 2022-10-22 12:59:34

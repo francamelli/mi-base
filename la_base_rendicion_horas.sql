@@ -25,18 +25,19 @@ DROP TABLE IF EXISTS `rendicion_horas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rendicion_horas` (
-  `rendicion_id` int NOT NULL AUTO_INCREMENT,
+  `rendicion_id` int DEFAULT NULL,
   `id_empleado` int DEFAULT NULL,
   `rol` varchar(30) DEFAULT NULL,
   `id_proyecto` int DEFAULT NULL,
   `cantidad_horas` int NOT NULL,
   `fecha` date DEFAULT NULL,
-  PRIMARY KEY (`rendicion_id`),
+  UNIQUE KEY `rendicion_id_UNIQUE` (`rendicion_id`),
   KEY `id_empleado` (`id_empleado`),
   KEY `id_proyecto` (`id_proyecto`),
+  KEY `indice_rendicion_horas_fecha` (`fecha`),
   CONSTRAINT `rendicion_horas_ibfk_1` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`empleado_id`),
   CONSTRAINT `rendicion_horas_ibfk_2` FOREIGN KEY (`id_proyecto`) REFERENCES `proyecto` (`proyecto_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,9 +46,29 @@ CREATE TABLE `rendicion_horas` (
 
 LOCK TABLES `rendicion_horas` WRITE;
 /*!40000 ALTER TABLE `rendicion_horas` DISABLE KEYS */;
-INSERT INTO `rendicion_horas` VALUES (2,1,'programador',1,6,'2022-01-01'),(3,2,'programador',1,6,'2022-01-01'),(4,4,'programador',2,6,'2022-01-01'),(5,4,'programador',2,4,'2022-01-02'),(6,4,'programador',2,4,'2022-01-02'),(7,4,'programador',2,4,'2022-01-02'),(8,4,'programador',2,4,'2022-01-02'),(9,4,'programador',2,4,'2022-01-02'),(10,4,'programador',2,4,'2022-01-02'),(11,4,'programador',2,4,'2022-01-02'),(12,4,'programador',2,4,'2022-01-02'),(13,4,'programador',2,4,'2022-01-02'),(14,4,'programador',2,4,'2022-01-02'),(15,4,'programador',2,4,'2022-01-02'),(16,4,'programador',2,4,'2022-01-02'),(17,4,'programador',2,4,'2022-01-02'),(18,4,'programador',2,4,'2022-01-02'),(19,4,'programador',2,4,'2022-01-02'),(20,4,'programador',2,4,'2022-01-02'),(21,4,'programador',2,4,'2022-01-02'),(22,4,'programador',2,4,'2022-01-02'),(23,4,'programador',2,4,'2022-01-02'),(24,4,'programador',2,4,'2022-01-02'),(25,4,'programador',2,4,'2022-01-02'),(26,4,'programador',2,4,'2022-01-02'),(27,4,'programador',2,4,'2022-01-02'),(28,4,'programador',2,4,'2022-01-02'),(29,4,'programador',2,4,'2022-01-02'),(30,4,'programador',2,4,'2022-01-02'),(31,4,'programador',2,4,'2022-01-02'),(32,4,'programador',2,4,'2022-01-02'),(33,4,'programador',2,4,'2022-01-02'),(34,4,'programador',2,4,'2022-01-02'),(35,4,'programador',2,4,'2022-01-02'),(36,4,'programador',2,4,'2022-01-02'),(37,4,'programador',2,4,'2022-01-02'),(38,4,'programador',2,4,'2022-01-02'),(39,4,'programador',2,4,'2022-01-02'),(40,4,'programador',2,4,'2022-01-02'),(41,4,'programador',2,4,'2022-01-02'),(42,1,'programador',2,6,'2022-02-02');
+INSERT INTO `rendicion_horas` VALUES (2,1,'programador',1,6,'2022-01-01'),(3,2,'programador',1,6,'2022-01-01'),(4,4,'programador',2,6,'2022-01-01'),(5,4,'programador',2,4,'2022-01-02'),(6,4,'programador',2,4,'2022-01-02'),(7,4,'programador',2,4,'2022-01-02'),(8,4,'programador',2,4,'2022-01-02'),(9,4,'programador',2,4,'2022-01-02'),(10,4,'programador',2,4,'2022-01-02'),(11,4,'programador',2,4,'2022-01-02'),(12,4,'programador',2,4,'2022-01-02'),(13,4,'programador',2,4,'2022-01-02'),(14,4,'programador',2,4,'2022-01-02'),(15,4,'programador',2,4,'2022-01-02'),(16,4,'programador',2,4,'2022-01-02'),(17,4,'programador',2,4,'2022-01-02'),(18,4,'programador',2,4,'2022-01-02'),(19,4,'programador',2,4,'2022-01-02'),(20,4,'programador',2,4,'2022-01-02'),(21,4,'programador',2,4,'2022-01-02'),(22,4,'programador',2,4,'2022-01-02'),(23,4,'programador',2,4,'2022-01-02'),(24,4,'programador',2,4,'2022-01-02'),(25,4,'programador',2,4,'2022-01-02'),(26,4,'programador',2,4,'2022-01-02'),(27,4,'programador',2,4,'2022-01-02'),(28,4,'programador',2,4,'2022-01-02'),(29,4,'programador',2,4,'2022-01-02'),(30,4,'programador',2,4,'2022-01-02'),(31,4,'programador',2,4,'2022-01-02'),(32,4,'programador',2,4,'2022-01-02'),(33,4,'programador',2,4,'2022-01-02'),(34,4,'programador',2,4,'2022-01-02'),(35,4,'programador',2,4,'2022-01-02'),(36,4,'programador',2,4,'2022-01-02'),(37,4,'programador',2,4,'2022-01-02'),(38,4,'programador',2,4,'2022-01-02'),(39,4,'programador',2,4,'2022-01-02'),(40,4,'programador',2,4,'2022-01-02'),(41,4,'programador',2,4,'2022-01-02'),(42,1,'programador',2,6,'2022-02-02'),(43,1,'programador',2,6,'2022-02-03'),(NULL,1,'a',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(NULL,1,'b',2,6,'2000-02-03'),(44,1,'b',2,6,'2000-02-03');
 /*!40000 ALTER TABLE `rendicion_horas` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `auto_numerico_rendicion` BEFORE INSERT ON `rendicion_horas` FOR EACH ROW begin
+ set @numero=0;
+ select numero into @numero from siguiente where nombre_tabla='rendicion_horas' order by numero desc;
+ set new.rendicion_id =@numero;
+ update siguiente set numero=numero+1 where nombre_tabla='rendicion_horas' order by numero desc;
+ end */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -58,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-12 20:46:14
+-- Dump completed on 2022-10-22 12:59:34

@@ -18,31 +18,26 @@ USE `la_base`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `proyecto`
+-- Table structure for table `siguiente`
 --
 
-DROP TABLE IF EXISTS `proyecto`;
+DROP TABLE IF EXISTS `siguiente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `proyecto` (
-  `proyecto_id` int NOT NULL AUTO_INCREMENT,
-  `id_cliente` int DEFAULT NULL,
-  `nombre` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`proyecto_id`),
-  KEY `id_cliente` (`id_cliente`),
-  KEY `indice_nombre_proyecto` (`nombre`),
-  CONSTRAINT `proyecto_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`cliente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `siguiente` (
+  `numero` int NOT NULL,
+  `nombre_tabla` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `proyecto`
+-- Dumping data for table `siguiente`
 --
 
-LOCK TABLES `proyecto` WRITE;
-/*!40000 ALTER TABLE `proyecto` DISABLE KEYS */;
-INSERT INTO `proyecto` VALUES (1,1,'primer proyecto'),(2,2,'mi proyecto'),(3,2,'my proyect');
-/*!40000 ALTER TABLE `proyecto` ENABLE KEYS */;
+LOCK TABLES `siguiente` WRITE;
+/*!40000 ALTER TABLE `siguiente` DISABLE KEYS */;
+INSERT INTO `siguiente` VALUES (13,'liquidacion_horas'),(45,'rendicion_horas');
+/*!40000 ALTER TABLE `siguiente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-22 12:59:35
+-- Dump completed on 2022-10-22 12:59:34

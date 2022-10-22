@@ -18,6 +18,10 @@ USE `la_base`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Dumping events for database 'la_base'
+--
+
+--
 -- Dumping routines for database 'la_base'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `cargarclientes` */;
@@ -248,4 +252,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-12 20:46:14
+-- Dump completed on 2022-10-22 12:59:35
